@@ -1,0 +1,122 @@
+<!-- <h1>Topics</h1>
+<ol>
+  <li>
+     <a routerLink="/interpolation" routerLinkActive="active">Interpolation</a> 
+    <a href="interpolation">Interpolation</a></li>
+  <li> <a href="property">Property Binding</a></li>
+  <li> <a href="class">Class Binding</a></li>
+  <li>  <a href="style">Style Binding</a></li>
+  <li> <a href="event">Event Binding</a></li>
+
+  
+</ol> -->
+
+<h1>INTERPOLATION</h1>
+
+  <h2>Text:</h2>
+  <p class="head">{{title}}</p>
+
+  <h2>User defined method:</h2>
+  <p class="head1">{{getAbout()}}</p>
+
+  <h2>String concatenation:</h2>
+  <p class="head2">{{'Aspire Systems '+'Siruseri,Chennai'}}</p>
+
+  <h2>Expressions:</h2>
+  <p class="head3">Division:{{108/2}}</p>
+  <p class="head3">Minimum of 2 numbers(using function):{{min(12,24)}}</p>
+  <p class="head3">Multiplication:50x2={{50*2}}</p>
+
+  <h2>Bind to property:</h2>
+  <!-- <p>Show me:<span [ngClass]=[giveMeRed1]>Red</span></p> -->
+
+
+  <p [ngClass] = "'giveMeRed'">red</p>
+
+  <p style.color={{giveMeRed}}>This is red</p>
+
+  <p>Show me <span class = "{{giveMecolor}}">blue</span></p>
+
+  <h1>PROPERTY BINDING</h1>
+
+  <!-- <p>Hai Sneha!</p> -->
+
+ <button  type="button" value="Property Binding1" [disabled]="disable">Disabled Button</button>
+ <br />
+ <br />
+ <button type="button" value="Property Binding2" [disabled]="disable1">Button</button>
+ 
+ <p [innerHTML]="text1"></p>
+ 
+ <img [src]="imgUrl">
+ <br />
+<br />
+Interpolation & Property binding:<br>
+<button type="button" value={{name}} disabled={{disable}} style='margin-right:16px'>Button 1</button>
+<!-- <br />
+<br /> -->
+<button type="button" [value]="name" [disabled]="disable" style='margin-right:16px'>Button 2</button>
+<br />
+<br />
+<button type="button" value={{name}} disabled={{disable2}} style='margin-right:16px'>Button 3</button>
+
+<button type="button" [value]="name" [disabled]="disable2" style='margin-right:16px'>Button 4</button>
+<br />
+<br />
+<h1>CLASS BINDING</h1>
+<h2 [class]="successClass">Success:)</h2>
+<h2 [class]="failClass">Fail:(</h2>
+
+<h1>STYLE BINDING</h1>
+<h4  [style.color]="colortext">Turquoise</h4>
+<h4 [style.color]="'hotpink'">Hotpink</h4>
+<h4 [style.color]="hasError?'green':'red'">Styling with Conditional operator</h4>
+
+<h1>EVENT BINDING</h1>
+<button (click)="onClick()">Greetings</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style >
+ 
+  .head{
+    color: blue;
+  }
+  .head1{
+    color:turquoise;
+  }
+  .head2{
+    color: palevioletred;
+  }
+  .head3{
+    color: red;
+    font-size: larger;
+  }
+  .giveMeRed{
+    color: green;
+  }
+  .blue{
+    color: blue;
+  }
+.success{
+  color: green;
+}
+.fail{
+  color: red;
+}
+</style>
+<router-outlet></router-outlet>
